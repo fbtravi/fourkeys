@@ -45,9 +45,10 @@ resource "google_secret_manager_secret" "event_handler" {
         location = var.region
       }
     }
-  depends_on = [
-    time_sleep.wait_for_services
-  ]
+    depends_on = [
+      time_sleep.wait_for_services
+    ]
+  }
 }
 
 resource "random_id" "event_handler_random_value" {
